@@ -1,6 +1,6 @@
 web:
-  upload-path: /home/cheng/data/
-  upload-path-pic: /home/cheng/data/
+  upload-path: /home/cheng/LogData/
+  upload-path-pic: /home/cheng/LogData/
 spring:
   mvc:
     static-path-pattern: /**

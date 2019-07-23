@@ -1,6 +1,6 @@
 package com.example.basic_backend.backend.Bussniss_logic.Entity.entityConfig;
 
-import com.example.basic_backend.backend.Bussniss_logic.Entity.data;
+import com.example.basic_backend.backend.Bussniss_logic.Entity.LogData;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,9 +15,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class DataConfig {
     @Bean(name = "data")
-    public data datainit(){
-        data Data = new data();
-        return Data;
+    public LogData datainit(){
+        LogData LogData = new LogData();
+        return LogData;
     }
 
 }

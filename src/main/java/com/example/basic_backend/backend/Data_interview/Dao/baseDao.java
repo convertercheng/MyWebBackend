@@ -17,4 +17,5 @@ public interface baseDao<T> extends JpaRepository<T,Long> {
         public User findbyName(String name);
 
 
+
 }

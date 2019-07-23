@@ -13,7 +13,7 @@ import javax.persistence.Id;
  **/
 @Data
 @Entity
-public class data {
+public class LogData {
     @Id
     @GeneratedValue
     public Integer id;
@@ -27,10 +27,10 @@ public class data {
     @Column
     public String text;         //正文
 
-    public data(){
+    public LogData(){
 
     }           //构造器
-    public data(String topic, String direction, String date, String text){
+    public LogData(String topic, String direction, String date, String text){
         this.date = topic;
         this.text = text;
         this.date = date;
