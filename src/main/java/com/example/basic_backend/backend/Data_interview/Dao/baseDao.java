@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface baseDao<T> extends JpaRepository<T,Long> {
+public interface baseDao<T> extends JpaRepository<User,Integer> {
         @Query("select name from User s where s.name = ?1 and s.password = ?2")
         public User findByNameandPassword(String name,String password);
 

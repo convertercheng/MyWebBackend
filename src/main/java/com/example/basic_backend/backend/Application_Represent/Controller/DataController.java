@@ -27,8 +27,6 @@ import java.util.HashMap;
 @Slf4j
 public class DataController {
 
-    @Autowired
-    public LogData LogData;
 
     @Autowired
     public DataService dataService;

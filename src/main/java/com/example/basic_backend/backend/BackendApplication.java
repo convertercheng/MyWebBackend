@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@EntityScan("com.example.basic_backend.backend")
-@RestController
-@EnableJpaRepositories
-@ServletComponentScan
+//@EntityScan("com.example.basic_backend.backend")
+//@RestController
+//@EnableJpaRepositories
+//@ServletComponentScan
 public class BackendApplication {
 
     public static void main(String[] args) {

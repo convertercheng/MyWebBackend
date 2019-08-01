@@ -14,7 +14,7 @@ import javax.persistence.Id;
  **/
 @Data
 @Entity
-public class paper {
+public class Paper {
 
     @Id
     @GeneratedValue
@@ -32,11 +32,11 @@ public class paper {
     @Column
     public String text;         //正文
 
-    public paper(){
+    public Paper(){
 
     }           //构造器
 
-    public paper(String topic, String direction, String date, String text){
+    public Paper(String topic, String direction, String date, String text){
         this.date = topic;
         this.direction = direction;
         this.text = text;

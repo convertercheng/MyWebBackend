@@ -13,9 +13,15 @@ public class Status {
 
 
         UNKNOW_ERROR(0000,"发生未知错误"),
+
         ADD_LOGDATA_ERROR(0001,"增加日志错误"),
         TEXT_MISSED(1000,"日志正文丢失"),
-        TOPIC_MISSED(1001,"日志标题丢失");
+
+        TOPIC_MISSED(1001,"日志标题丢失"),
+
+
+        AUTH_ERROR(1002,"登陆失败"),
+        AUTH_DENIED(1003,"用户名或密码不正确");
 
         private Integer error_code;
         private String error_message;

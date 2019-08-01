@@ -1,6 +1,3 @@
-web:
-  upload-path :  D:\lib\web\mywebfront\MyWeb
-  upload-path-pic :  D:\lib\web\mywebfront\MyWeb
 spring:
   mvc:
     static-path-pattern: /**
@@ -16,18 +13,24 @@ spring:
     password: provinet433
     driver-class-name: com.mysql.jdbc.Driver
   jpa:
-    hibernate:
-      ddl-auto: update
-      properties:
-        hibernate:
-          dialect: org.hibernate.dialect.MySQL5Dialect
+
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.MySQL5Dialect
   data:
     elasticsearch:
       repositories:
         enabled: true
       cluster-nodes: 127.0.0.1:9300
-    mongodb:
-      uri: mongodb://localhost:27017/spider
+#    mongodb:
+#      uri: mongodb://localhost:27017/spider
+
 
 MAIN_WEB : myweb.html
 LOGIN_WEB : login.html
+server:
+  port: 8081
+
+jwt:
+  key: yqJn3zXsdFALpvBfgy3dGwW5dPsIJY4wS2ga5Pn9BFoh24AUzs84qCjpIiNiFfQlLGAjdJZYpz5O6AGhxUyOws1KXHtiJ3bQN33cC6QaCJAlEQVwrB6xCV2Jb89rotivmkEG6HTnXBNeq9hceo98OhNgnLZj161XROLrd8FhOkoInKKK7ZtLRi8lYhG4aFaqz70vy6iNqg5JWs0skRmllBT6WjiXd6uRrsqCOHe6Gda2CAw4I2EUDddLxztDrXgX8rjFTeng3y0EFBUM7zVjRFfB7V4US1rSXtRJS8VDndJoVjofUaBksLGVT1nDKmCpupudbaWQgKuAYdpLZd00mTV9zLmiFjiKFoxwKA51pTFAsPw4YpFleZ7ZkCenijUaETPC8ScdAmZs1Ggh5HO6omNHpC8pPXY

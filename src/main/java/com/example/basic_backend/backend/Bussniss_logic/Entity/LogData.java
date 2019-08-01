@@ -14,6 +14,7 @@ import javax.persistence.Id;
 @Data
 @Entity
 public class LogData {
+
     @Id
     @GeneratedValue
     public Integer id;
@@ -30,8 +31,8 @@ public class LogData {
     public LogData(){
 
     }           //构造器
-    public LogData(String topic, String direction, String date, String text){
-        this.date = topic;
+    public LogData(String topic, String date, String text){
+        this.topic = topic;
         this.text = text;
         this.date = date;
     }
