@@ -1,7 +1,7 @@
 package com.example.basic_backend.backend.Application_Represent;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+//import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -2,6 +2,7 @@ package com.example.basic_backend.backend.Bussniss_logic.Entity;
 
 
 import lombok.Data;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class User {
     private String password;
 
     @Column
-    private String permit;
+    private Integer permission;
 
     public User(Integer ID,String name, String password, String permit){
 

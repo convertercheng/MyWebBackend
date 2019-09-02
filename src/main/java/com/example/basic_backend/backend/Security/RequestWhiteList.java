@@ -1,4 +1,4 @@
-package com.example.basic_backend.backend.Util;
+package com.example.basic_backend.backend.Security;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +12,7 @@ public class RequestWhiteList {
         private static List<String> whitelist = Arrays.asList(
                 "/data/add",
                 "/user/login"
+
         );
 
         public static List<String> get() {

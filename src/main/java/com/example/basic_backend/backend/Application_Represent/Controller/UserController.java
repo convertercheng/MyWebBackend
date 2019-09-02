@@ -1,10 +1,13 @@
 package com.example.basic_backend.backend.Application_Represent.Controller;
 
 
+import com.example.basic_backend.backend.Bussniss_logic.Entity.Request.UserRequest;
 import com.example.basic_backend.backend.Bussniss_logic.Entity.User;
+import com.example.basic_backend.backend.Data_interview.Dao.SonDao.UserDao;
 import com.example.basic_backend.backend.Data_interview.Dao.baseDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +30,12 @@ public class UserController {
 
     @Autowired
     private baseDao baseDao;
-    private User user= new User();
+    private User user;
+
+    @Autowired
+    private UserDao userDao;
+
+
     @RequestMapping("index")
     public HashMap<String, String> userIndexHashmap(HttpSession httpSession){
         HashMap<String,String> hashMap = new HashMap<>();
@@ -39,13 +47,13 @@ public class UserController {
     @RequestMapping(value = "visitor")
     public String visitor(){
         if(user!=null){
-            user=baseDao.findbyName("Visitor");
+            user=userDao.findByName("Visitor");
         }
 
         return "游客,欢迎访问"; }
 
     @RequestMapping(value = "login")
-    public String login(){
+    public String login(UserRequest userRequest){
         User loginuser = new User();
         String str = "";
         String username = loginuser.getName();
@@ -59,8 +67,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "uvisitor")
-    public String visitor(HttpServletRequest request){
-        User username = baseDao.findbyName("visitor");
+    public String visitor(UserRequest userRequest){
+        User visitor = userDao.findByName(userRequest.getName());
+
         return "visitor_mode";
     }
 
@@ -70,7 +79,7 @@ public class UserController {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         System.out.println(username+" " +password);
-        uloginuser = baseDao.findByNameandPassword(username,password);
+        uloginuser = userDao.findByUsernameAndPassword(username,password);
         String str = "";
         if(uloginuser!=null){
             httpSession.setAttribute("userLogin",uloginuser);

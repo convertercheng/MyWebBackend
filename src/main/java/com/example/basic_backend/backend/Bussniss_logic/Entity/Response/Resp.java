@@ -1,5 +1,6 @@
 package com.example.basic_backend.backend.Bussniss_logic.Entity.Response;
 
+import com.google.gson.Gson;
 import lombok.Data;
 
 /**
@@ -12,4 +13,24 @@ public class Resp<T> {
     T data;
     Integer error_code;
     String error_message;
+
+    public Resp (T data,Integer error_code,String error_message){
+        this.data = data;
+        this.error_code = error_code;
+        this.error_message = error_message;
+    }
+
+    public Resp (Integer error_code,String error_message){
+        this.data = null;
+        this.error_code = error_code;
+        this.error_message = error_message;
+    }
+
+    public Resp (){
+    }
+
+    public String toJson(){
+        Gson gson = new Gson();
+        return gson.toJson(this);
+    }
 }

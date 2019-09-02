@@ -1,5 +1,6 @@
 package com.example.basic_backend.backend.Application_Represent.Controller;
 
+import com.example.basic_backend.backend.Bussniss_logic.Entity.Request.UserRequest;
 import com.example.basic_backend.backend.Bussniss_logic.Entity.Response.Resp;
 import com.example.basic_backend.backend.Bussniss_logic.Entity.StaticStatus.Constant;
 import com.example.basic_backend.backend.Bussniss_logic.Entity.StaticStatus.Status;
@@ -19,6 +20,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +31,7 @@ import java.util.HashMap;
 /**
  * @程志豪 时间：2019 07 31 15:41
  * 邮箱：k2160789@163.com
- * 描述：{desp}
+ * 描述：{登陆控制器}
  **/
 @RestController
 @Slf4j
@@ -41,15 +43,15 @@ public class AuthController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping("/auth/login")
-    public Resp login(User user){
-        log.info(user.getName()+"登陆");
+    public Resp login(UserRequest userRequest){
+        log.info(userRequest.getName()+"登陆");
 
         Authentication authentication;
         try{
             authentication = authenticationManager.authenticate(
                     new WebAuthenticationToken(
-                            user.getName(),
-                            user.getPassword()
+                            userRequest.getName(),
+                            userRequest.getPassword()
                     )
             );
         }catch (AuthenticationException e){

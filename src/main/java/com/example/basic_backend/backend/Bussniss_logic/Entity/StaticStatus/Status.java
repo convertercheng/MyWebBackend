@@ -11,7 +11,7 @@ public class Status {
 
     public enum webError {
 
-
+        INVALID_TOKEN(0002,"invilid token"),
         UNKNOW_ERROR(0000,"发生未知错误"),
 
         ADD_LOGDATA_ERROR(0001,"增加日志错误"),
@@ -21,7 +21,8 @@ public class Status {
 
 
         AUTH_ERROR(1002,"登陆失败"),
-        AUTH_DENIED(1003,"用户名或密码不正确");
+        AUTH_DENIED(1003,"用户名或密码不正确"),
+        AUTH_FAILD(1004,"当前用户无权限");
 
         private Integer error_code;
         private String error_message;
